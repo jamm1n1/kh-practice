@@ -1,0 +1,13 @@
+package com.uni.run;
+
+import com.uni.variable.A_Variable;
+
+public class RUN {
+
+	public static void main(String[] args) {
+	
+     A_Variable a = new A_Variable();
+     System.out.println(a);
+	}
+
+}

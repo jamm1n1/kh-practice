@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.uni.first.A_MethodPrinter"/>
+    <fullyQualifiedTypeName name="com.uni.first.B_ValuePrinter"/>
+    <fullyQualifiedTypeName name="com.uni.variable.A_Variable"/>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.uni.practice.Pratice"/>
+    <fullyQualifiedTypeName name="com.uni.variable.B_COnstant"/>
+    <fullyQualifiedTypeName name="com.uni.variable.C_Overflow"/>
+    <fullyQualifiedTypeName name="com.uni.variable.D_Cast"/>
+    <fullyQualifiedTypeName name="sun.jvm.hotspot.tools.SysPropsDumper"/>
+    <fullyQualifiedTypeName name="com.uni.variable.E_Printf"/>
+</qualifiedTypeNameHistroy>
