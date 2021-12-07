@@ -102,7 +102,7 @@ public class ArrayPractice {
 			arr[i] = i + 1;
 			System.out.print(arr[i]);
 
-			// 3 121 5 12321 7 1234321 9 123454321 3 -1 5 -2 3 3 5 4 7 5 -1 -2 -3 -4 -5 -6
+			
 		}
 		int b = 1;
 
@@ -222,4 +222,36 @@ public class ArrayPractice {
 		Arrays.sort(arr);
 		System.out.println(Arrays.toString(arr));
 }
+	public void practice15() {
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			
+		    System.out.println("정수 : ");
+			int num = sc.nextInt();
+			int[]arr = new int [num];
+			int r = 1;
+			if(num < 3 || num % 2 ==0) {
+				System.out.println("다시 입력하세요");
+				
+			}
+			else if (num >=3 && num %2 !=0) {
+				for(int i = 1; i <=(num/2)+1; i++) {
+					arr[i] = r;
+					r++;
+					System.out.print(arr[i]);
+				}
+					int e= 1;
+				for(int j = (num/2)+1; j < arr.length; j++) {
+					
+					arr[j] =  j - ((2 * e) - 1);
+						
+				    e++;
+			        System.out.print(arr[j]);
+				}
+				break;
+			}
+			
+			}		
+	
+	}
 }
