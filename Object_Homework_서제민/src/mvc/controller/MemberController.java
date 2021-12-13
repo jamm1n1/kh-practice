@@ -47,15 +47,18 @@ public class MemberController {
 			searchMember = null;
 			if(menu ==1) {
 				for(int i = 0; i < memberCount; i++) {
-					if(mem[i].getUserId().equals(searchMember)) return mem[i]; //for문을 통해 mem [i]아이디로 검색하여 이퀄스를
+					if(mem[i].getUserId().equals(searchMember)) 
+						return mem[i]; 
 				}
 			}else if(menu == 2) {
 				for(int i = 0; i < memberCount; i++) {
-					if(mem[i].getName().equals(searchMember)) return mem[i];
+					if(mem[i].getName().equals(searchMember)) 
+						return mem[i];
 				}
 			}else {
 				for(int i = 0; i < memberCount; i++) {
-					if(mem[i].getEmail().equals(searchMember)) return mem[i];
+					if(mem[i].getEmail().equals(searchMember))
+						return mem[i];
 				}
 			}
 			return searchMember;
@@ -84,6 +87,98 @@ public class MemberController {
 			mem[memberCount -1] = null;// 멤버 하나 비웠으니 -1
 			memberCount--;
 		}
+		public Member[] sortIdAsc() {
+			
+			
+			Member copy[] = new Member[memberCount];
+			System.arraycopy(mem, 0, copy, 0, memberCount);
+			
+			for(int i=0; i<copy.length; i++	) {
+				for(int j=0; j<i; j++) {
+					if(copy[i].getUserId().compareTo(copy[j].getUserId()) < 0) {
+						Member temp = copy[j];
+						copy[j] = copy[i];
+						copy[i] = temp;
+					}
+				}
+			}
+			
+			return copy;
+		}
+		
+		public Member[] sortIdDesc() {
+			
+			Member copy[] = new Member[memberCount];
+			System.arraycopy(mem, 0, copy, 0, memberCount);
+			
+			for(int i=0; i<copy.length; i++	) {
+				for(int j=0; j<i; j++) {
+					if(copy[i].getUserId().compareTo(copy[j].getUserId()) > 0) {
+						Member temp = copy[j];
+						copy[j] = copy[i];
+						copy[i] = temp;
+					}
+				}
+			}
+			
+			return copy;
+		}
+		
+		public Member[] sortAgeAsc() {
+			
+			
+			Member copy[] = new Member[memberCount];
+			System.arraycopy(mem, 0, copy, 0, memberCount);
+			
+			for(int i=0; i<copy.length; i++	) {
+				for(int j=0; j<i; j++) {
+					if(copy[i].getAge() - copy[j].getAge() < 0) {
+						Member temp = copy[j];
+						copy[j] = copy[i];
+						copy[i] = temp;
+					}
+				}
+			}
+			
+			return copy;
+		}
+		
+		public Member[] sortAgeDesc() {
+			
+			Member copy[] = new Member[memberCount];
+			System.arraycopy(mem, 0, copy, 0, memberCount);
+			
+			for(int i=0; i<copy.length; i++	) {
+				for(int j=0; j<i; j++) {
+					if(copy[i].getAge() - copy[j].getAge() > 0) {
+						Member temp = copy[j];
+						copy[j] = copy[i];
+						copy[i] = temp;
+					}
+				}
+			}
+			
+			return copy;
+		}
+		
+		public Member[] sortGenderDesc() {
+			
+			Member copy[] = new Member[memberCount];
+			System.arraycopy(mem, 0, copy, 0, memberCount);
+			
+			for(int i=0; i<copy.length; i++	) {
+				for(int j=0; j<i; j++) {
+					if(copy[i].getGender() == 'M' && copy[j].getGender() == 'F') {
+						Member temp = copy[j];
+						copy[j] = copy[i];
+						copy[i] = temp;
+					}
+				}
+			}
+			
+			return copy;
+		}
+
 		//정렬부분 가이드보고 다시 공부하기 너무어렵다 여기만넘ㅇ으면되는데 
 	/*	public Member[] sortIdAsc() {//이부분은 다른사람껄 가져왔다 근데 전혀 모르겠다 왜 이렇게하는거지 ?  이부분은 가이드를 보고 다시 공부해야할거같다
 			//compareTo : 숫자의 비교 같은 경우는 단순히 크다(1), 같다(0), 작다(-1) 의 관한 결과값을 리턴해주는 반면
@@ -157,3 +252,4 @@ public class MemberController {
 				return copy;
 			}*/
 		}
+		
